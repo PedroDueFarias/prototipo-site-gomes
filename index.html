@@ -40,8 +40,7 @@ a{color:inherit}
 .btn-g:hover{background:#d0c3ab}
 .btn-line{border-color:#6b6558;color:#fff}
 .btn-line:hover{border-color:var(--gold2);color:var(--gold2)}
-.btn-wa{background:var(--wa);color:#fff}
-.btn-wa:hover{filter:brightness(1.08)}
+.wa-i{flex:none}
 .btn-sm{padding:10px 16px;font-size:13.5px}
 @media(min-width:860px){.nav{display:flex}}
 
@@ -132,6 +131,8 @@ h2 em{font-style:normal;font-weight:300;color:var(--gold)}
 .orc{background:linear-gradient(rgba(243,241,238,.5),rgba(243,241,238,.5)),var(--mk-light) 40% 80%/cover,var(--stone2)}
 .orc .wrap{display:grid;gap:34px}
 .box{background:#fff;border:1px solid var(--line);border-radius:6px;padding:24px}
+.form-intro{font-size:14.5px;line-height:1.5;color:var(--mut);background:var(--stone);border-left:3px solid var(--gold2);border-radius:3px;padding:12px 14px}
+.form-intro b{color:var(--ink);font-weight:600}
 label{display:block;font-size:13px;font-weight:600;margin:14px 0 6px;color:var(--ink)}
 input,select,textarea{width:100%;font:400 15.5px var(--sans);padding:12px 13px;border:1.5px solid var(--line);border-radius:4px;background:#fff;color:var(--txt)}
 input:focus,select:focus,textarea:focus{outline:none;border-color:var(--gold)}
@@ -153,9 +154,10 @@ footer .wrap{display:grid;gap:14px}
 footer .logo{justify-self:start}
 footer .legal{font-size:12px;color:#8a8478;border-top:1px solid #2c2a26;padding-top:14px}
 
-.sticky{position:fixed;left:0;right:0;bottom:0;z-index:25;padding:10px 14px;background:rgba(20,17,15,.96);border-top:1px solid #2c2a26;display:flex;gap:10px}
-.sticky .btn{flex:1;padding:12px 8px;font-size:14.5px}
-@media(min-width:860px){.sticky{display:none}footer{padding-bottom:40px}}
+.sticky{position:fixed;left:0;right:0;bottom:0;z-index:25;padding:10px 14px calc(10px + env(safe-area-inset-bottom));background:rgba(20,17,15,.96);border-top:1px solid #2c2a26;display:flex;transition:transform .25s}
+.sticky.off{transform:translateY(110%)}
+.sticky .btn{flex:1;padding:14px 10px;font-size:15.5px}
+@media(min-width:860px){.sticky{left:50%;right:auto;bottom:22px;transform:translateX(-50%);padding:0;background:none;border:0}.sticky.off{transform:translate(-50%,160%)}.sticky .btn{padding:15px 28px;box-shadow:0 14px 34px -10px rgba(0,0,0,.55)}}
 
 .lb{position:fixed;inset:0;background:rgba(10,10,10,.94);z-index:50;display:none;align-items:center;justify-content:center;flex-direction:column;padding:20px}
 .lb.on{display:flex}
@@ -318,12 +320,12 @@ footer .legal{font-size:12px;color:#8a8478;border-top:1px solid #2c2a26;padding-
     <div>
       <span class="kicker">Orçamento</span>
       <h2>Conte o que você precisa e <em>receba o orçamento</em></h2>
-      <p class="sub">Preencha em menos de um minuto. Ao enviar, a conversa abre no WhatsApp já com as suas informações.</p>
+      <p class="sub">Leva menos de um minuto. Quanto mais detalhes, mais rápido sai o seu orçamento.</p>
       <div style="height:22px"></div>
       <div class="info" id="contato">
         <h3>WhatsApp</h3>
         <p>(82) 99611-9220</p>
-        <a class="btn btn-wa btn-sm" href="https://wa.me/5582996119220" target="_blank" rel="noopener">Chamar no WhatsApp</a>
+        <a class="btn btn-line btn-sm" style="color:var(--ink);border-color:var(--ink)" href="https://wa.me/5582996119220" target="_blank" rel="noopener">Abrir conversa</a>
       </div>
       <div class="info">
         <h3>Endereço</h3>
@@ -338,9 +340,10 @@ footer .legal{font-size:12px;color:#8a8478;border-top:1px solid #2c2a26;padding-
     </div>
 
     <div class="box" id="boxform">
+      <p class="form-intro"><b>Preencha e já inicie a conversa com tudo adiantado.</b> Suas respostas vão direto para o WhatsApp da Gomes, e o atendimento começa mais rápido e mais certeiro.</p>
       <form id="orcForm" novalidate>
         <div id="f-nome"><label for="nome">Seu nome</label><input id="nome" name="nome" type="text" autocomplete="name" placeholder="Como podemos te chamar?"></div>
-        <div id="f-amb"><label for="amb">O que você quer fazer?</label>
+        <div id="f-amb"><label for="amb">O que deseja fazer?</label>
           <select id="amb" name="amb">
             <option value="">Selecione</option>
             <option>Bancada de cozinha</option>
@@ -367,7 +370,7 @@ footer .legal{font-size:12px;color:#8a8478;border-top:1px solid #2c2a26;padding-
       <div id="done">
         <h3>Quase lá!</h3>
         <p>Toque no botão para enviar o pedido pelo WhatsApp.</p>
-        <a class="btn btn-wa" id="waSend" href="#" target="_blank" rel="noopener">Enviar pelo WhatsApp</a>
+        <a class="btn btn-g" id="waSend" href="#" target="_blank" rel="noopener"><svg class="wa-i" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.21h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm0 18.15h-.01a8.2 8.2 0 0 1-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.2 8.2 0 0 1-1.26-4.38c0-4.54 3.7-8.23 8.25-8.23 2.2 0 4.27.86 5.82 2.42a8.18 8.18 0 0 1 2.41 5.83c0 4.54-3.7 8.22-8.23 8.22zm4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.12-.17.25-.64.81-.78.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-2-1.23-.74-.66-1.24-1.47-1.38-1.72-.15-.25-.02-.38.11-.5.11-.11.25-.29.37-.43.12-.15.17-.25.25-.41.08-.17.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.43.06-.66.31-.23.25-.87.85-.87 2.07s.89 2.4 1.01 2.56c.12.17 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.67-1.18.21-.58.21-1.07.14-1.18-.06-.1-.23-.17-.48-.29z"/></svg>Enviar pelo WhatsApp</a>
         <button type="button" id="again">Corrigir informações</button>
       </div>
     </div>
@@ -384,10 +387,7 @@ footer .legal{font-size:12px;color:#8a8478;border-top:1px solid #2c2a26;padding-
   </div>
 </footer>
 
-<div class="sticky">
-  <a class="btn btn-wa" href="https://wa.me/5582996119220" target="_blank" rel="noopener">WhatsApp</a>
-  <a class="btn btn-g" href="#orcamento">Pedir orçamento</a>
-</div>
+<div class="sticky" id="sticky"><a class="btn btn-g" href="#boxform" id="stickyBtn"><svg class="wa-i" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.21h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm0 18.15h-.01a8.2 8.2 0 0 1-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.2 8.2 0 0 1-1.26-4.38c0-4.54 3.7-8.23 8.25-8.23 2.2 0 4.27.86 5.82 2.42a8.18 8.18 0 0 1 2.41 5.83c0 4.54-3.7 8.22-8.23 8.22zm4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.12-.17.25-.64.81-.78.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-2-1.23-.74-.66-1.24-1.47-1.38-1.72-.15-.25-.02-.38.11-.5.11-.11.25-.29.37-.43.12-.15.17-.25.25-.41.08-.17.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.43.06-.66.31-.23.25-.87.85-.87 2.07s.89 2.4 1.01 2.56c.12.17 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.67-1.18.21-.58.21-1.07.14-1.18-.06-.1-.23-.17-.48-.29z"/></svg>Quero fazer um orçamento</a></div>
 
 <div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Foto ampliada"><button type="button" aria-label="Fechar">&times;</button><img id="lbi" alt=""><p id="lbc"></p></div>
 
@@ -411,6 +411,10 @@ footer .legal{font-size:12px;color:#8a8478;border-top:1px solid #2c2a26;padding-
   });
   document.getElementById('again').addEventListener('click',function(){done.classList.remove('on');form.style.display='block'});
   ['nome','amb'].forEach(function(n){form[n].addEventListener('input',function(){bad('f-'+n,false)})});
+
+  var st=document.getElementById('sticky'),box=document.getElementById('boxform');
+  document.getElementById('stickyBtn').addEventListener('click',function(e){e.preventDefault();box.scrollIntoView({behavior:'smooth',block:'center'})});
+  if('IntersectionObserver' in window){new IntersectionObserver(function(en){st.classList.toggle('off',en[0].isIntersecting)},{threshold:.25}).observe(box)}
 
   var lb=document.getElementById('lb'),lbi=document.getElementById('lbi'),lbc=document.getElementById('lbc');
   function open(fig){var im=fig.querySelector('img');lbi.src=im.src;lbi.alt=im.alt;lbc.textContent=fig.querySelector('figcaption').textContent;lb.classList.add('on')}
