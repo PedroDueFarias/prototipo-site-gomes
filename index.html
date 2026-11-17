@@ -5,13 +5,15 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Gomes Mármores e Granitos | Bancadas, pias e lavatórios sob medida em Maceió</title>
 <meta name="description" content="Bancadas de cozinha, pias de banheiro, lavatórios e áreas de serviço em granito, mármore e quartzo, sob medida. Gomes Mármores e Granitos, Cidade Universitária, Maceió/AL.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 64 64%27%3E%3Crect width=%2764%27 height=%2764%27 fill=%27%2314110f%27/%3E%3Ctext x=%2732%27 y=%2745%27 font-family=%27Georgia,serif%27 font-size=%2742%27 text-anchor=%27middle%27 fill=%27%23a29582%27%3EG%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Marcellus&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
 :root{
-  --ink:#121212;--ink2:#1c1b19;--stone:#f4f1ec;--stone2:#e9e4db;--line:#d8d1c4;
-  --gold:#b8893b;--gold2:#d4a95a;--txt:#2a2926;--mut:#6d675d;--wa:#1faa54;
+  --ink:#14110f;--ink2:#1b1815;--stone:#f3f1ee;--stone2:#e6e3de;--line:#d6d1ca;
+  --gold:#6b5c47;--gold2:#b9a98f;--logo:#a29582;--txt:#2a2724;--mut:#6a645b;--wa:#1faa54;
+  --mk-dark:url(img/marmore-escuro.jpg);--mk-light:url(img/marmore-claro.jpg);
   --serif:"Cormorant Garamond",Georgia,"Times New Roman",serif;
   --sans:Inter,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
 }
@@ -22,20 +24,20 @@ img{display:block;max-width:100%}
 a{color:inherit}
 .wrap{max-width:1160px;margin:0 auto;padding:0 20px}
 
-.demo{background:var(--gold);color:#1a1405;font-size:12.5px;text-align:center;padding:7px 14px;font-weight:500}
+.demo{background:var(--gold2);color:#17130e;font-size:12.5px;text-align:center;padding:7px 14px;font-weight:500}
 
-.top{position:sticky;top:0;z-index:30;background:rgba(18,18,18,.96);backdrop-filter:blur(6px);border-bottom:1px solid #2c2a26}
+.top{position:sticky;top:0;z-index:30;background:rgba(20,17,15,.96);backdrop-filter:blur(6px);border-bottom:1px solid #2c2a26}
 .top .wrap{display:flex;align-items:center;justify-content:space-between;height:64px;gap:16px}
-.logo{text-decoration:none;color:#fff;line-height:1.05}
-.logo b{display:block;font-family:var(--serif);font-size:25px;letter-spacing:.04em;font-weight:700}
-.logo b i{font-style:normal;color:var(--gold2)}
-.logo small{font-size:9.5px;letter-spacing:.28em;color:#a9a396;text-transform:uppercase}
+.logo{text-decoration:none;color:var(--logo);display:inline-flex;flex-direction:column;align-items:center;line-height:1}
+.logo .lg-n{font-family:Marcellus,"Cormorant Garamond",Georgia,serif;font-size:27px;letter-spacing:.06em;font-weight:400}
+.logo .lg-s{font-family:Marcellus,Georgia,serif;font-size:8.6px;letter-spacing:.2em;margin-top:5px;color:#8f8272;text-transform:uppercase;white-space:nowrap}
+.logo .lg-l{display:block;width:46%;height:1px;background:#6f6455;margin-top:5px}
 .nav{display:none;gap:26px}
 .nav a{color:#d8d3c8;text-decoration:none;font-size:14px}
 .nav a:hover{color:var(--gold2)}
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:14px 24px;border-radius:4px;font:600 15px var(--sans);text-decoration:none;border:1.5px solid transparent;cursor:pointer;transition:.15s}
-.btn-g{background:var(--gold);color:#17110a}
-.btn-g:hover{background:var(--gold2)}
+.btn-g{background:var(--gold2);color:#14110f}
+.btn-g:hover{background:#d0c3ab}
 .btn-line{border-color:#6b6558;color:#fff}
 .btn-line:hover{border-color:var(--gold2);color:var(--gold2)}
 .btn-wa{background:var(--wa);color:#fff}
@@ -44,7 +46,7 @@ a{color:inherit}
 @media(min-width:860px){.nav{display:flex}}
 
 /* hero */
-.hero{background:var(--ink);color:#fff;padding:44px 0 56px;position:relative;overflow:hidden}
+.hero{background:linear-gradient(90deg,rgba(20,17,15,.66),rgba(20,17,15,.12)),var(--mk-dark) center/cover,var(--ink);color:#fff;padding:44px 0 56px;position:relative;overflow:hidden}
 .hero .wrap{display:grid;gap:34px}
 .eyebrow{display:inline-block;font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:var(--gold2);margin-bottom:16px}
 h1{font-family:var(--serif);font-weight:600;font-size:clamp(38px,8vw,66px);line-height:1.02;letter-spacing:-.01em}
@@ -55,11 +57,11 @@ h1 em{font-style:italic;color:var(--gold2)}
 .stars{color:var(--gold2);letter-spacing:2px}
 .hero-img{position:relative}
 .hero-img img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:6px;box-shadow:0 30px 60px -20px rgba(0,0,0,.7)}
-.hero-img::before{content:"";position:absolute;inset:14px -10px -10px 14px;border:1.5px solid var(--gold);border-radius:6px;z-index:-1;opacity:.55}
+.hero-img::before{content:"";position:absolute;inset:14px -10px -10px 14px;border:1.5px solid var(--gold2);border-radius:6px;z-index:-1;opacity:.55}
 @media(min-width:900px){.hero .wrap{grid-template-columns:1.05fr 1fr;align-items:center;gap:60px}.hero{padding:76px 0 84px}}
 
 /* faixa */
-.stats{background:var(--ink2);color:#fff;border-top:1px solid #2c2a26}
+.stats{background:linear-gradient(rgba(20,17,15,.55),rgba(20,17,15,.55)),var(--mk-dark) 30% 60%/cover,var(--ink2);color:#fff;border-top:1px solid #2c2a26}
 .stats .wrap{display:grid;grid-template-columns:repeat(2,1fr);gap:0}
 .stat{padding:22px 10px;text-align:center;border-right:1px solid #2c2a26}
 .stat:nth-child(2n){border-right:0}
@@ -74,7 +76,7 @@ h2 em{font-style:italic;color:var(--gold)}
 .sub{color:var(--mut);max-width:620px;font-size:16.5px}
 
 /* áreas (índice) */
-.areas{background:var(--stone2)}
+.areas{background:linear-gradient(rgba(243,241,238,.55),rgba(243,241,238,.55)),var(--mk-light) center/cover,var(--stone2)}
 .areas-grid{display:grid;gap:14px;margin-top:30px}
 .area-card{display:flex;gap:16px;align-items:center;background:#fff;border:1px solid var(--line);border-radius:6px;padding:12px;text-decoration:none;transition:.15s}
 .area-card:hover{border-color:var(--gold);transform:translateY(-2px)}
@@ -106,17 +108,19 @@ h2 em{font-style:italic;color:var(--gold)}
 @media(min-width:760px){.gal.one{columns:1}.gal.duo{columns:2}}
 
 /* serviços */
-.serv{background:var(--ink);color:#fff}
+.serv{background:linear-gradient(rgba(20,17,15,.5),rgba(20,17,15,.5)),var(--mk-dark) 70% 40%/cover,var(--ink);color:#fff}
 .serv h2{color:#fff}
+.serv h2 em,.serv .kicker{color:var(--gold2)}
 .serv .sub{color:#b9b3a6}
 .serv-grid{display:grid;gap:14px;margin-top:30px}
-.serv-grid article{border:1px solid #34312b;border-radius:6px;padding:22px;background:#171614}
+.serv-grid article{border:1px solid #3a352d;border-radius:6px;padding:22px;background:rgba(20,17,15,.78);backdrop-filter:blur(2px)}
 .serv-grid h3{font-family:var(--serif);font-size:24px;color:var(--gold2);margin-bottom:6px}
 .serv-grid p{font-size:14.5px;color:#bdb7aa}
 @media(min-width:700px){.serv-grid{grid-template-columns:repeat(2,1fr)}}
 @media(min-width:1000px){.serv-grid{grid-template-columns:repeat(3,1fr)}}
 
 /* prova */
+.reviews{background:linear-gradient(rgba(243,241,238,.6),rgba(243,241,238,.6)),var(--mk-light) 80% 20%/cover,var(--stone)}
 .reviews .row{display:grid;gap:14px;margin-top:28px}
 .rev{background:#fff;border:1px solid var(--line);border-radius:6px;padding:22px}
 .rev .stars{font-size:15px}
@@ -125,7 +129,7 @@ h2 em{font-style:italic;color:var(--gold)}
 @media(min-width:760px){.reviews .row{grid-template-columns:repeat(3,1fr)}}
 
 /* orçamento */
-.orc{background:var(--stone2)}
+.orc{background:linear-gradient(rgba(243,241,238,.5),rgba(243,241,238,.5)),var(--mk-light) 40% 80%/cover,var(--stone2)}
 .orc .wrap{display:grid;gap:34px}
 .box{background:#fff;border:1px solid var(--line);border-radius:6px;padding:24px}
 label{display:block;font-size:13px;font-weight:600;margin:14px 0 6px;color:var(--ink)}
@@ -144,11 +148,12 @@ textarea{min-height:88px;resize:vertical}
 .info p{color:var(--mut);margin:2px 0 10px}
 @media(min-width:900px){.orc .wrap{grid-template-columns:1fr 1fr;gap:60px;align-items:start}}
 
-footer{background:var(--ink);color:#b9b3a6;padding:40px 0 96px;font-size:14px}
+footer{background:linear-gradient(rgba(20,17,15,.55),rgba(20,17,15,.55)),var(--mk-dark) 20% 90%/cover,var(--ink);color:#b9b3a6;padding:40px 0 96px;font-size:14px}
 footer .wrap{display:grid;gap:14px}
+footer .logo{justify-self:start}
 footer .legal{font-size:12px;color:#8a8478;border-top:1px solid #2c2a26;padding-top:14px}
 
-.sticky{position:fixed;left:0;right:0;bottom:0;z-index:25;padding:10px 14px;background:rgba(18,18,18,.96);border-top:1px solid #2c2a26;display:flex;gap:10px}
+.sticky{position:fixed;left:0;right:0;bottom:0;z-index:25;padding:10px 14px;background:rgba(20,17,15,.96);border-top:1px solid #2c2a26;display:flex;gap:10px}
 .sticky .btn{flex:1;padding:12px 8px;font-size:14.5px}
 @media(min-width:860px){.sticky{display:none}footer{padding-bottom:40px}}
 
@@ -164,10 +169,7 @@ footer .legal{font-size:12px;color:#8a8478;border-top:1px solid #2c2a26;padding-
 
 <header class="top">
   <div class="wrap">
-    <a class="logo" href="#topo" aria-label="Gomes Mármores e Granitos">
-      <b>GOMES<i>.</i></b>
-      <small>Mármores e Granitos</small>
-    </a>
+    <a class="logo" href="#topo" aria-label="Gomes Mármores e Granitos"><span class="lg-n">GOMES</span><span class="lg-s">Mármores &amp; Granitos</span><span class="lg-l"></span></a>
     <nav class="nav" aria-label="Principal">
       <a href="#areas">Áreas</a>
       <a href="#projetos">Projetos</a>
@@ -376,7 +378,7 @@ footer .legal{font-size:12px;color:#8a8478;border-top:1px solid #2c2a26;padding-
 
 <footer>
   <div class="wrap">
-    <a class="logo" href="#topo" aria-label="Gomes Mármores e Granitos"><b>GOMES<i>.</i></b><small>Mármores e Granitos</small></a>
+    <a class="logo" href="#topo" aria-label="Gomes Mármores e Granitos"><span class="lg-n">GOMES</span><span class="lg-s">Mármores &amp; Granitos</span><span class="lg-l"></span></a>
     <p>Bancadas, pias e lavatórios em granito, mármore e quartzo, sob medida, em Maceió/AL.</p>
     <p class="legal">Esta página é uma prévia de demonstração, criada como proposta de site para a Gomes Mármores e Granitos. As fotos e as informações vêm do perfil público da empresa no Google e no Instagram. Não é o site oficial.</p>
   </div>
